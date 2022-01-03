@@ -15,12 +15,12 @@ var (
 )
 
 func init() {
-	flag.StringVar(&baseCfg.ListenAddr, "l", ":8899", "listen address")
+	flag.StringVar(&baseCfg.ListenAddr, "l", ":8080", "listen address")
 	flag.StringVar(&email, "email", "", "email address")
 	flag.StringVar(&token, "token", "", "token")
-	flag.StringVar(&rule, "rule", `protocol=="socks5" && "Version:5 Method:No Authentication(0x00)" && after="2021-08-01" && country="CN"`, "search rule")
+	flag.StringVar(&rule, "rule", `protocol=="socks5" && "Version:5 Method:No Authentication(0x00)" && after="2021-10-01"`, "search rule")
 	flag.IntVar(&baseCfg.IPRegionFlag, "region", 0, "0: all 1: cannot bypass gfw 2: bypass gfw")
-	flag.IntVar(&pageCount, "page", 5, "the page count you want to crawl")
+	flag.IntVar(&pageCount, "page", 50, "the page count you want to crawl")
 	flag.Parse()
 }
 
